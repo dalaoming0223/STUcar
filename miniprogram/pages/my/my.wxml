@@ -1,0 +1,11 @@
+<!--pages/my/my.wxml-->
+<text>pages/my/my.wxml</text>
+<view class='bg flexDownC'>
+    <label>
+      <image class='userTx' src='{{userTx || defaultUrl}}'></image>
+      <button open-type='getUserInfo' bindgetuserinfo='getUserInfoHandler'></button>
+    </label>
+    <view>
+      <text class='{{ username == "点击头像登录" ? "usernameDe":"username"}} '>{{username}}</text>
+    </view>
+  </view>

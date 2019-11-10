@@ -1,0 +1,30 @@
+@font-face {font-family: "iconfont";
+    src: url('//at.alicdn.com/t/font_1499281_ddu7tet42p9.eot?t=1573203047121'); /* IE9 */
+    src: url('//at.alicdn.com/t/font_1499281_ddu7tet42p9.eot?t=1573203047121#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPYAAsAAAAACBQAAAOLAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDUIMMATYCJAMQCwoABCAFhG0HSBv+BsgehXF78iQikZbabimCr/3Yvrv7gmlSjQxVPDEkppuETiRCa0RKZAjFS+Cn96zXpl2ka2RPWBipDipm0myRlAepOElfkr5Yv/7/c0299AHmt7M53i2KoikieLQ3wFECDSiqKcoGugFNkLfILuKKWORyAp0m9CLYq26UgY8CtQvEA8uowCejUhoSQyvUFUMLxAuItWm68CKA5+D78Qfp4QOSKgPqenJVpYXSz85vehPj/o8zwEOAGc8AZRQZa0AhbipNZ4jIu4bQaf1GZANotRKfnV+vedP7/39euBd5i//yCFkiakDx3WBdkOUTYyhF8LmGIvPVO06CF9K6RY0nAK8COZZShOj3iyMvzBhJu2eEtTrHhbe5ZkZKPeN5mdMVqfR4Imi30zzOSQbMcAvE4z2SwJKAdceiRIuPdw7ceDJWXDgEijCyiL6ItsdIzNBa3Iq0bQwaqShWDbt5U3H7tnLnnYI7t1AtWJ3qdLk8kXsFt7nHyQ7d7HXznvzwLcnMOyVy10zP+ILrvz+jEMVDRbDiMwpGl1BIzY7Q1qhp41tDJhSgz4q9wnrfi+QLyvJ9Qe5CXEzdJfd7IZHvenFKLqm5+PT0Z0UIpmkcohiBDt2QO5VVL2bBLAxyXrrs2Dn6Gwqb664E98tn6pPfV7Cuyuxx1bELAkfLq8Y3krgr9+tX1xWVID92zh2yMbgl8Xtz8fmm4ZkSh2ybKj6zxNLj3apV8uCLwcAD/MvniNKg9TyBEALyI+HzJ5vZee97ZHBg4S8fyaXkfXxoYgTLvwL9mN/BgJn/xgAzii1C6lJMMaUdc3GUCpPQibX8rSCDHo+hHAG7CW2GUSBpjEPWmkMLuQaVLutQa21Cp1U1o7sMsSBE8QVWTOYg9NsJSa83yPpdQgv5CCqjPkGtPwjodBqhU3ZZCJassCCVDWkp9XCK1XAmTLQ2MkykEWM3qCxpUcBWIIuVdVBpyan5QA0yIcsYPawOJt1mwxS2cEaqmlsNGQwcxVu4dqSxJetsNj4/JQVXnSlZwxmBtMsCUbFBtChqw1FYGhwT7OW2IQufpyEMOwMVS0NaS1ABsbBiK6ekSZYKQGvkJlDatZxi5cBIZ2ODUTALjhGlmjMgBuzlUPjqRu0QDZtkuh5uXr4UIRuGypPnVxqfcBl0QrOXEAoIgUgghnKlUtu9rTqVSaOz+9PHWk9lYgyoguOHAwAA') format('woff2'),
+    url('//at.alicdn.com/t/font_1499281_ddu7tet42p9.woff?t=1573203047121') format('woff'),
+    url('//at.alicdn.com/t/font_1499281_ddu7tet42p9.ttf?t=1573203047121') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('//at.alicdn.com/t/font_1499281_ddu7tet42p9.svg?t=1573203047121#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-fabu:before {
+    content: "\e625";
+  }
+  
+  .icon-shanchu:before {
+    content: "\e72d";
+  }
+  
+  .icon-RectangleCopy:before {
+    content: "\e6a2";
+  }
+  
+  

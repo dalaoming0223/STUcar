@@ -1,0 +1,49 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/fabu/fabu",
+    "pages/blog/blog",
+    "pages/my/my"
+  ],
+  "window": {
+    "navigationBarTitleText": "carpoor",
+    "navigationBarBackgroundColor": "#EEC900"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabbar/basics.png",
+        "selectedIconPath": "images/tabbar/basics_cur.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/fabu/fabu",
+        "iconPath": "images/tabbar/fabu.png",
+        "selectedIconPath": "images/tabbar/fabu_cur.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/blog/blog",
+        "iconPath": "images/tabbar/faxian.png",
+        "selectedIconPath": "images/tabbar/faxian_cur.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/tabbar/my.png",
+        "selectedIconPath": "images/tabbar/my_cur.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+      "cu-custom": "/colorui/components/cu-custom"
+    },
+  "sitemapLocation": "sitemap.json"
+}

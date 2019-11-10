@@ -1,0 +1,8 @@
+<!--components/button-modal/button-modal.wxml-->
+<view class="modal" hidden="{{!modalShow}}">
+  <view class="panel">
+    <i class="iconfont icon-shanchu" bind:tap="onClose"></i>
+    <!-- 插槽 具名插槽-->
+    <slot name="modal-content"></slot>
+  </view>
+</view>
