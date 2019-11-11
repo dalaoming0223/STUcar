@@ -1,0 +1,26 @@
+<!--pages/blog-edit/blog-edit.wxml-->
+<view class="container">
+    <textarea class="" placeholder="分享新鲜事.." bindinput="onInput" maxlength="140" auto-focus bindfocus="onFocus" bindblur="onBlur">
+    </textarea>
+    <view class="image-list">
+    <!-- 这里是显示图片 -->
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="image-wrap">
+        <image class="image" src="{{item}}" mode="aspectFill"></image>
+        <i class="iconfont icon-shanchudelete30:before" bind:tap="onDelImage" data-index="{{index}}"></i>
+      </view>
+    </block>
+    <!-- 这里是选择图片 -->
+        <view class="image-wrap selectphoto" hidden="{{!selectPhoto}}" bind:tap="onChooseImage">
+          <i class="iconfont icon-add-fill"></i>
+        </view>
+    
+    
+    </view>
+</view>
+
+
+<view class="footer" style="bottom:{{footerBottom}}px">
+  <text class="words-num">{{wordsNum}}</text>
+  <button class="send-btn">发布</button>
+</view>

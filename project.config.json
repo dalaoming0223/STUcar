@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -43,6 +43,14 @@
 					"id": -1,
 					"name": "pages/blog/blog",
 					"pathName": "pages/blog/blog",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/blog-edit/blog-edit",
+					"pathName": "pages/blog-edit/blog-edit",
+					"query": "nickName=\"大佬铭hehe\"&avatarUrl=“ https://wx.qlogo.cn/mmopen/vi_32/zzhk6EeEYIO2Npu26…crNCPd9Cg2vy2UiahT1kPM2J61DRmrobibn5aQgYc8ZKg/132”",
 					"scene": null
 				}
 			]
