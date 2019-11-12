@@ -6,7 +6,7 @@
     <!-- 这里是显示图片 -->
     <block wx:for="{{images}}" wx:key="*this">
       <view class="image-wrap">
-        <image class="image" src="{{item}}" mode="aspectFill"></image>
+        <image class="image" src="{{item}}" mode="aspectFill" bind:tap="onPreviewImage" data-imgsrc="{{item}}"></image>
         <i class="iconfont icon-shanchudelete30:before" bind:tap="onDelImage" data-index="{{index}}"></i>
       </view>
     </block>
@@ -22,5 +22,5 @@
 
 <view class="footer" style="bottom:{{footerBottom}}px">
   <text class="words-num">{{wordsNum}}</text>
-  <button class="send-btn">发布</button>
+  <button class="send-btn" bind:tap="send">发布</button>
 </view>

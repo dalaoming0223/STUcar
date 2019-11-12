@@ -1,6 +1,9 @@
 // pages/blog-edit/blog-edit.js
 const MAX_WORDS_NUM = 140
 const MAX_IMG_NUM = 9
+const db = wx.cloud.database()
+let content = ''
+let userInfo = {}
 Page({
 
   /**
@@ -18,6 +21,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    userInfo = options
   },
   onInput(event) {
     console.log(event.detail.value)
@@ -28,7 +32,7 @@ Page({
     this.setData({
       wordsNum
     })
-    
+    content = event.detail.value
   },
   onFocus(event) {
     console.log(event)
@@ -70,6 +74,71 @@ Page({
         selectPhoto: true
       })
     }
+  },
+  onPreviewImage(event) {
+    //细节  给用户预览图片
+    wx.previewImage({
+      urls: this.data.images,
+      current: event.target.dataset.imgsrc,
+    })
+  },
+  send() {
+    if(content.trim() === ''){
+      wx.showModal({
+        title: '请输入内容',
+        content: '',
+      })
+      return
+    }
+    wx.showLoading({
+      title: '发布中'
+    })
+    //数据存到云数据库中(文字内容、fileID（图片），昵称，头像，时间)
+    let promiseArr = []
+    let fileIds    = []
+    //步骤一 先把图片上传至云存储
+    for(let i = 0, len = this.data.images.length ; i < len; i++){
+      let p = new Promise((resolve, reject) => {
+        let item = this.data.images[i]
+        let suffix = /\.\w+$/.exec(item)[0]
+        wx.cloud.uploadFile({
+          cloudPath: 'blog/' + Date.now() + '-' + Math.random() * 1000000 + suffix,
+          filePath: item,
+          success: (res) => {
+            console.log(res.fileID)
+            fileIds = fileIds.concat(res.fileID)
+            resolve()
+          },
+          fail: (err) => {
+            console.error(err)
+            reject()
+          }
+        })
+      })
+      promiseArr.push(p)
+    }
+    //步骤二存在云数据库
+    Promise.all(promiseArr).then((res) => {
+      db.collection('blog').add({
+        data: {
+          ...userInfo,
+          content,
+          img: fileIds,
+          createTime: db.serverDate(),
+        }
+      }).then((res)=>{
+        wx.hideLoading()
+        wx.showToast({
+          title: '发布成功',
+        })
+      })
+    }).catch((err)=>{
+      wx.hideLoading()
+      wx.showToast({
+        title: '发布失败',
+      })
+      console.log(err)
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
