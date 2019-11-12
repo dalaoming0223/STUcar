@@ -1,5 +1,6 @@
 <!--pages/blog/blog.wxml-->
 <view class="container">
+    <!-- 你的小头头 -->
     <view class="header">
         <view class="publish-container" bind:tap="onPublish">
             <i class="iconfont icon-fabu:before"></i>
@@ -7,6 +8,14 @@
         <view class="search-container">
             <x-search></x-search>
         </view>
+    </view>
+    <!-- 你的小身身 -->
+    <view class="blog-list">
+      <block wx:for="{{blogList}}" wx:key="_id">
+        <view class="blog-panel">         
+          <x-blog-card blog="{{item}}"></x-blog-card>
+        </view>
+      </block>
     </view>
     <!-- 底部弹出层 -->
     <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"

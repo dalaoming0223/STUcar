@@ -6,7 +6,7 @@
     background-color: #fff;
     height: 100rpx;
     position: fixed;
-    top: 10;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 99;
@@ -27,4 +27,13 @@
 
 .search-container {
     flex: 1;
+}
+
+.blog-list {
+  margin-top: 120rpx;
+}
+
+.blog-panel {
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
 }

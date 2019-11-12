@@ -131,6 +131,10 @@ Page({
         wx.showToast({
           title: '发布成功',
         })
+        //返回并刷新
+        wx.navigateBack({
+          
+        })
       })
     }).catch((err)=>{
       wx.hideLoading()
