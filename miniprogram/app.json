@@ -5,7 +5,8 @@
     "pages/fabu/fabu",
     "pages/blog/blog",
     "pages/my/my",
-    "pages/blog-edit/blog-edit"
+    "pages/blog-edit/blog-edit",
+    "pages/blog-comment/blog-comment"
   ],
   "window": {
     "navigationBarTitleText": "carpoor",

@@ -70,6 +70,13 @@ Page({
         blogList: this.data.blogList.concat(res.result)
       })
       wx.hideLoading()
+      wx.stopPullDownRefresh()
+    })
+  },
+
+  goComment() {
+    wx.navigateTo({
+      url: '../../pages/blog-comment/blog-comment',
     })
   },
   /**
