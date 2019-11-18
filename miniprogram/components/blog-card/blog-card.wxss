@@ -40,3 +40,6 @@
 .blog-img .img:nth-child(3n) {
   margin-right: 0;
 }
+/* .blog-nickName {
+  font-size: 32rpx;
+} */

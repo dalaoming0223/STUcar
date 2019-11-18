@@ -50,6 +50,13 @@ Page({
       })
       return
     }
+    console.log(app.globalData)
+    //是否授权登录
+    // if(!app.globalData.userInfo){
+    //   wx.redirectTo({
+    //     url: '',
+    //   })
+    // }
 
     // 获取用户信息
     wx.getSetting({

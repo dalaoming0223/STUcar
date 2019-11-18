@@ -1,4 +1,5 @@
 // pages/blog/blog.js
+let keyword = ''
 Page({
 
   /**
@@ -54,6 +55,14 @@ Page({
     this._loadBlogList()
   },
 
+  onSearch(event) {
+    console.log(event)
+    this.setData({
+      blogList: []
+    })
+    keyword = event.detail.keyword
+    this._loadBlogList(0)
+  },
   _loadBlogList(start = 0) {
     wx.showLoading({
       title: '后台在玩命加载中',
@@ -61,6 +70,7 @@ Page({
     wx.cloud.callFunction({
       name: 'blog',
       data: {
+        keyword,
         start,
         count: 10,
         $url: 'list',
@@ -74,9 +84,9 @@ Page({
     })
   },
 
-  goComment() {
+  goComment(event) {
     wx.navigateTo({
-      url: '../../pages/blog-comment/blog-comment',
+      url: '../../pages/blog-comment/blog-comment?blogId=' + event.target.dataset.blogid,
     })
   },
   /**

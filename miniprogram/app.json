@@ -25,12 +25,6 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/fabu/fabu",
-        "iconPath": "images/tabbar/fabu.png",
-        "selectedIconPath": "images/tabbar/fabu_cur.png",
-        "text": "发布"
-      },
-      {
         "pagePath": "pages/blog/blog",
         "iconPath": "images/tabbar/faxian.png",
         "selectedIconPath": "images/tabbar/faxian_cur.png",

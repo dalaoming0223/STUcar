@@ -6,14 +6,14 @@
             <i class="iconfont icon-fabu:before"></i>
         </view>
         <view class="search-container">
-            <x-search></x-search>
+            <x-search bind:search="onSearch"></x-search>
         </view>
     </view>
     <!-- 你的小身身 -->
     <view class="blog-list">
       <block wx:for="{{blogList}}" wx:key="_id">
         <view class="blog-panel">         
-          <x-blog-card blog="{{item}}"bind:tap="goComment"></x-blog-card>
+          <x-blog-card blog="{{item}}" data-blogid="{{item._id}}"bind:tap="goComment"></x-blog-card>
         </view>
       </block>
     </view>

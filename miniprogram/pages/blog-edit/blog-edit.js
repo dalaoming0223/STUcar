@@ -91,7 +91,8 @@ Page({
       return
     }
     wx.showLoading({
-      title: '发布中'
+      title: '发布中',
+      mask: true      //产生出一个蒙版，使用户不能再继续进行操作
     })
     //数据存到云数据库中(文字内容、fileID（图片），昵称，头像，时间)
     let promiseArr = []
@@ -132,9 +133,12 @@ Page({
           title: '发布成功',
         })
         //返回并刷新
-        wx.navigateBack({
-          
-        })
+        wx.navigateBack()
+        const pages = getCurrentPages()
+        console.log(pages)
+        //取到上一个页面
+        const prevPage = pages[pages.length - 2]
+        prevPage.onPullDownRefresh()
       })
     }).catch((err)=>{
       wx.hideLoading()
