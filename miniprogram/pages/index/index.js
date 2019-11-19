@@ -3,6 +3,7 @@ const app = getApp()
 
 Page({
   data: {
+    modalShow: false,
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
@@ -43,6 +44,43 @@ Page({
     }],
   },
 
+  onPublishPingCar() {
+    //判断用户是否授权
+    wx.getSetting({
+      success: (res) => {
+        console.log(res)
+        if (res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            success: (res) =>{
+              //授权成功时
+              app.globalData.userInfo = res.userInfo
+              console.log(app.globalData.userInfo)
+              this.onLoginSuccess({
+                detail: res.userInfo
+              })
+            }
+          })
+        } else{
+          this.setData({
+            modalShow: true,
+          })
+        }
+      }
+    })
+  },
+  onLoginSuccess(event) {
+    console.log(event)
+    const detail = event.detail
+    wx.navigateTo({
+      url: '../NewCarSearch/NewCarSearch'
+    })
+  },
+  onLoginFail() {
+    wx.showModal({
+      title: '授权用户才能发',
+      content: '',
+    })
+  },
   onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({
@@ -50,7 +88,7 @@ Page({
       })
       return
     }
-    console.log(app.globalData)
+    
     //是否授权登录
     // if(!app.globalData.userInfo){
     //   wx.redirectTo({
@@ -63,8 +101,10 @@ Page({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
+          wx.getUserInfo({           
             success: res => {
+              app.globalData.userInfo = res.userInfo
+              console.log(app.globalData)
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
                 userInfo: res.userInfo

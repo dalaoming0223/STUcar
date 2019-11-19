@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "x-login": "/components/login/login"
+  },
+  "enablePullDownRefresh": true
 }

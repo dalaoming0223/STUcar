@@ -63,24 +63,17 @@
 			<view wx:else>已经到底了</view>
 		</view>
 	</view>
+
+	<!-- 底部弹出层 -->
+    <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
+    bind:loginfail="onLoginFail">
+        
+    </x-login>
+</scroll-view>
 	<!-- 发布信息组件 -->
 	<view class='publish-btn'>
 		<view class='right-view'></view>
-		<view class='edit-btn blod-view' bindtap='trigger'>
-			<image class='edit-icon {{status}}' src='../../images/icon/publish.png'></image>
-			<image class='close-icon {{status}}' src='../../images/icon/close.png'></image>
-		</view>
-		<!-- 人找车 -->
-		<view class='rc blod-view {{status}}'>
-			<navigator class='navigator' url=''>
-				<image class='img' src='../../images/icon/rc.png'></image>
-			</navigator>
-		</view>
-		<!-- 车找人 -->
-		<view class='cr blod-view {{status}}'>
-			<navigator class='navigator' url=''>
-				<image class='img' src='../../images/icon/cr.png'></image>
-			</navigator>
+		<view class='edit-btn blod-view' bindtap='onPublishPingCar'>
+			<image class='edit-icon ' src='/images/icon/publish.png'></image>
 		</view>
 	</view>
-</scroll-view>

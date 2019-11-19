@@ -1,4 +1,5 @@
 // pages/blog/blog.js
+const app = getApp()
 let keyword = ''
 Page({
 
@@ -21,7 +22,8 @@ Page({
           wx.getUserInfo({
             success: (res) =>{
               //授权成功时
-              console.log(res)
+              app.globalData.userInfo = res.userInfo
+              console.log('测试：' + app.globalData.userInfo)
               this.onLoginSuccess({
                 detail: res.userInfo
               })

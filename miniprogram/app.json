@@ -6,7 +6,9 @@
     "pages/blog/blog",
     "pages/my/my",
     "pages/blog-edit/blog-edit",
-    "pages/blog-comment/blog-comment"
+    "pages/blog-comment/blog-comment",
+    "pages/peopleLookCars/peopleLookCars",
+    "pages/NewCarSearch/NewCarSearch"
   ],
   "window": {
     "navigationBarTitleText": "carpoor",
@@ -39,7 +41,7 @@
     ]
   },
   "usingComponents": {
-      "cu-custom": "/colorui/components/cu-custom"
-    },
+    "cu-custom": "/colorui/components/cu-custom"
+  },
   "sitemapLocation": "sitemap.json"
 }
