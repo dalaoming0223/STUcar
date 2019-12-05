@@ -9,11 +9,11 @@
           <!-- 出发城市 -->
           <view class='picker'>
             <picker
-              mode="region"
+              mode="selector"
               bindchange="startRegionChange" 
-              value="{{startRegion}}" 
-              custom-item="{{customItem}}">
-              {{startRegion[2]}}
+              value="{{startPlace}}"
+              range="{{startRegion}}">
+              {{startRegion[startPlace]}}
             </picker>
           </view>
           <!-- 出行方向 -->
@@ -23,10 +23,12 @@
           <!-- 目的地城市 -->
           <view class="picker">
             <picker 
-              mode="region"
+              mode="selector"
               bindchange="endRegionChange" 
-              value="{{endRegion}}">
-              {{endRegion[2]}}
+              value="{{endPlace}}"
+              range="{{endRegion}}"
+              >
+              {{endRegion[endPlace]}}
             </picker>
           </view>
         </view>
@@ -55,21 +57,21 @@
       </view>
     </view>
     <!-- 上车地点 -->
-    <view class='item'>
+    <!-- <view class='item'>
       <text class='label'>上车地点</text>
       <view class='cont link' bindtap="chooseStartMapTap">
         <text wx:if="{{!startLocation.name}}"  class='text placeholder'>请选择出发地点</text>
         <text wx:else class='text'>{{startLocation.name}}</text>
       </view>
-    </view>
+    </view> -->
     <!-- 下车地点 -->
-    <view class='item'>
+    <!-- <view class='item'>
       <text class='label'>下车地点</text>
       <view class='cont link' bindtap="chooseEndtMapTap">
         <text wx:if="{{!endLocation.name}}" class='text placeholder'>请选择到达地点</text>
         <text wx:else class='text'>{{endLocation.name}}</text>
       </view>
-    </view>
+    </view> -->
     <!-- 人数 -->
     <view class='item'>
       <text class='label'>人数</text>
@@ -105,7 +107,7 @@
     <view class='item'>
       <text class='label'>备注</text>
       <view class='cont price'>
-        <textarea class='remark' placeholder="请输入..." value='{{remarks}}'/>
+        <textarea class='remark' bindinput="inputedit" data-name="remarks"placeholder="请输入..." value='{{remarks}}'/>
       </view>
     </view>
   </view>

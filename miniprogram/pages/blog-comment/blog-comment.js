@@ -1,11 +1,16 @@
 // pages/blog-comment/blog-comment.js
+import formatTime from '../../utils/formatTime.js'
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    blog: {},
+    commentList: [],
+    blogId: '',
+    isComment: true
   },
 
   /**
@@ -13,8 +18,50 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    this.setData({
+      blogId: options.blogId
+    })
+    this._getBlogDetail()
   },
 
+  // 获取数据
+  _getBlogDetail() {
+    wx.showLoading({
+      title: '加载中'
+    })
+    wx.cloud.callFunction({
+      name: 'blog',
+      data: {
+        blogId: this.data.blogId,
+        $url: 'blogDetail'
+      }
+    }).then((res) => {
+      wx.hideLoading()
+
+      let commentList = res.result.commentList.data
+
+      // 时间格式化
+      commentList.forEach((item) => {
+        item.createTime = formatTime(new Date(item.createTime))
+      })
+
+      this.setData({
+        commentList,
+        blog: res.result.detail[0]
+      })
+
+      // 是否有评论
+      if (this.data.commentList.length > 0) {
+        this.setData({
+          isComment: true
+        })
+      } else {
+        this.setData({
+          isComment: false
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

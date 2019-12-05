@@ -6,6 +6,7 @@ cloud.init()
 const TcbRouter = require('tcb-router')
 const db = cloud.database()
 const blogCollection = db.collection('blog')
+const MAX_LIMIT = 100
 // 云函数入口函数
 exports.main = async (event, context) => {
   const app = new TcbRouter({
@@ -14,7 +15,8 @@ exports.main = async (event, context) => {
   app.router('list', async (ctx, next) => {
     const keyword =  event.keyword
     let w = {}
-    if(keyword.trim() != ''){
+    let k = keyword.trim()
+    if(k != ''){
       w = {
         content: db.RegExp({
           regexp: keyword,

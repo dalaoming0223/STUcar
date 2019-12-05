@@ -58,11 +58,197 @@
 			</view>
 		</view>
 
+    <view class='list-table'>
+			<!-- 顶部信息 -->
+			<view class='top-view'>
+				<!-- 头像+昵称 -->
+				<view class='headImgName'>
+					<image class='img' src=''></image>
+					<text class='name'></text>
+				</view>
+				<!--方向+电话 -->
+				<view class='dreicTel'>
+					<text class='direction'></text>
+					<text class='tel'>预约</text>
+				</view>
+			</view>
+			<!-- 行车路线 -->
+			<view class='trip'>
+				<view class='set-out'>
+					<text class='label'>时间：</text>
+					<text class='setOut-time'>2019-10-10</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>起点：</text>
+					<text class='route'>学校的小黑屋</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>途径：</text>
+					<view class='route'>
+						<text class='route-item'>你懂得</text>
+					</view>
+				</view>
+				<view class='route-line'>
+					<text class='label'>终点：机场</text>
+					<text class='route'>你懂得</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>预算：</text>
+					<text class='route'>100元/人</text>
+				</view>
+			</view>
+			<!-- 底部信息 -->
+			<view class='bottom-view'>
+				<text class='send-time'>备注:</text>
+				<text class='seat'>座位：<text class='number'></text> 4个 </text>
+			</view>
+		</view>
+
+    <view class='list-table'>
+			<!-- 顶部信息 -->
+			<view class='top-view'>
+				<!-- 头像+昵称 -->
+				<view class='headImgName'>
+					<image class='img' src=''></image>
+					<text class='name'></text>
+				</view>
+				<!--方向+电话 -->
+				<view class='dreicTel'>
+					<text class='direction'></text>
+					<text class='tel'>预约</text>
+				</view>
+			</view>
+			<!-- 行车路线 -->
+			<view class='trip'>
+				<view class='set-out'>
+					<text class='label'>时间：</text>
+					<text class='setOut-time'>2019-10-10</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>起点：</text>
+					<text class='route'>学校的小黑屋</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>途径：</text>
+					<view class='route'>
+						<text class='route-item'>你懂得</text>
+					</view>
+				</view>
+				<view class='route-line'>
+					<text class='label'>终点：机场</text>
+					<text class='route'>你懂得</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>预算：</text>
+					<text class='route'>100元/人</text>
+				</view>
+			</view>
+			<!-- 底部信息 -->
+			<view class='bottom-view'>
+				<text class='send-time'>备注:</text>
+				<text class='seat'>座位：<text class='number'></text> 4个 </text>
+			</view>
+		</view>
+
+    <view class='list-table'>
+			<!-- 顶部信息 -->
+			<view class='top-view'>
+				<!-- 头像+昵称 -->
+				<view class='headImgName'>
+					<image class='img' src=''></image>
+					<text class='name'></text>
+				</view>
+				<!--方向+电话 -->
+				<view class='dreicTel'>
+					<text class='direction'></text>
+					<text class='tel'>预约</text>
+				</view>
+			</view>
+			<!-- 行车路线 -->
+			<view class='trip'>
+				<view class='set-out'>
+					<text class='label'>时间：</text>
+					<text class='setOut-time'>2019-10-10</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>起点：</text>
+					<text class='route'>学校的小黑屋</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>途径：</text>
+					<view class='route'>
+						<text class='route-item'>你懂得</text>
+					</view>
+				</view>
+				<view class='route-line'>
+					<text class='label'>终点：机场</text>
+					<text class='route'>你懂得</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>预算：</text>
+					<text class='route'>100元/人</text>
+				</view>
+			</view>
+			<!-- 底部信息 -->
+			<view class='bottom-view'>
+				<text class='send-time'>备注:</text>
+				<text class='seat'>座位：<text class='number'></text> 4个 </text>
+			</view>
+		</view>
+
+    <view class='list-table'>
+			<!-- 顶部信息 -->
+			<view class='top-view'>
+				<!-- 头像+昵称 -->
+				<view class='headImgName'>
+					<image class='img' src=''></image>
+					<text class='name'></text>
+				</view>
+				<!--方向+电话 -->
+				<view class='dreicTel'>
+					<text class='direction'></text>
+					<text class='tel'>预约</text>
+				</view>
+			</view>
+			<!-- 行车路线 -->
+			<view class='trip'>
+				<view class='set-out'>
+					<text class='label'>时间：</text>
+					<text class='setOut-time'>2019-10-10</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>起点：</text>
+					<text class='route'>学校的小黑屋</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>途径：</text>
+					<view class='route'>
+						<text class='route-item'>你懂得</text>
+					</view>
+				</view>
+				<view class='route-line'>
+					<text class='label'>终点：机场</text>
+					<text class='route'>你懂得</text>
+				</view>
+				<view class='route-line'>
+					<text class='label'>预算：</text>
+					<text class='route'>100元/人</text>
+				</view>
+			</view>
+			<!-- 底部信息 -->
+			<view class='bottom-view'>
+				<text class='send-time'>备注:</text>
+				<text class='seat'>座位：<text class='number'></text> 4个 </text>
+			</view>
+		</view>
+
 		<view class='loddingText-view'>
 			<view wx:if="{{hasMore}}">上拉加载更多</view>
 			<view wx:else>已经到底了</view>
 		</view>
 	</view>
+
+  
 
 	<!-- 底部弹出层 -->
     <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"

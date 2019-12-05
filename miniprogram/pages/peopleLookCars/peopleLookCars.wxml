@@ -1,8 +1,8 @@
 <!--miniprogram/pages/peopleLookCars/peopleLookCars.wxml-->
 <view class='container'>
   <!-- 方向 -->
-  <view class='list-view'>
-    <view class='item'>
+  <view wx:if="{{list.length != 0 || isLodding }}" class='list-view'>
+    <view wx:for="{{list}}" wx:key = "index" class='item'>
       <view>
         <view class='text-group'>
           <view class='text-item'>
@@ -32,7 +32,7 @@
       <view>
         <view class='address-view'>
           <text class='label'>起点</text>
-          <text class='cont text'>{{item.startLocation.name}}</text>
+          <text class='cont text'>{{item.startRegion[0]}}</text>
         </view>
         <view class='address-view'>
           <text class='label'>终点</text>
@@ -42,12 +42,12 @@
     </view>
   </view>
 
-  <view class='null-view'>
+  <!-- <view class='null-view'>
     <view class='img-view'>
       <image src='../../images/icon/null_view.jpg'></image>
-    </view>
+    </view> -->
     <!-- <text class="text">暂无出行信息</text> -->
-  </view>
+  <!-- </view> -->
 
   <!-- 发起拼车 -->
   <view class='submit-btn'>

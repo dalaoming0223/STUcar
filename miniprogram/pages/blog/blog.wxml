@@ -1,25 +1,27 @@
 <!--pages/blog/blog.wxml-->
 <view class="container">
-    <!-- 你的小头头 -->
-    <view class="header">
-        <view class="publish-container" bind:tap="onPublish">
-            <i class="iconfont icon-fabu:before"></i>
-        </view>
-        <view class="search-container">
-            <x-search bind:search="onSearch"></x-search>
-        </view>
+  <!-- 你的小头头 -->
+  <view class="header">
+    <view class="publish-container" bind:tap="onPublish">
+      <i class="iconfont icon-fabu:before"></i>
     </view>
-    <!-- 你的小身身 -->
-    <view class="blog-list">
-      <block wx:for="{{blogList}}" wx:key="_id">
-        <view class="blog-panel">         
-          <x-blog-card blog="{{item}}" data-blogid="{{item._id}}"bind:tap="goComment"></x-blog-card>
-        </view>
-      </block>
+    <view class="search-container">
+      <x-search bind:search="onSearch"></x-search>
     </view>
-    <!-- 底部弹出层 -->
-    <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
-    bind:loginfail="onLoginFail">
-        
-    </x-login>
+  </view>
+  <!-- 你的小身身 -->
+  <view class="blog-list">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="blog-panel">
+        <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment"></x-blog-card>
+        <!-- 评论、分享组件 iconfont 调用外部样式-->
+        <x-blog-ctrl blogId="{{item._id}}" blog="{{item}}" iconfont="iconfont" icon-pinglun="icon-pinglun"
+          icon-fenxiang="icon-fenxiang" />
+      </view>
+    </block>
+  </view>
+  <!-- 底部弹出层 -->
+  <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
+
+  </x-login>
 </view>

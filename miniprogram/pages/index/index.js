@@ -72,7 +72,7 @@ Page({
     console.log(event)
     const detail = event.detail
     wx.navigateTo({
-      url: '../NewCarSearch/NewCarSearch'
+      url: '../peopleLookCars/peopleLookCars'
     })
   },
   onLoginFail() {
