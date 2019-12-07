@@ -4,15 +4,16 @@
     "pages/index/index",
     "pages/fabu/fabu",
     "pages/blog/blog",
-    "pages/my/my",
     "pages/blog-edit/blog-edit",
     "pages/blog-comment/blog-comment",
     "pages/peopleLookCars/peopleLookCars",
-    "pages/NewCarSearch/NewCarSearch"
+    "pages/NewCarSearch/NewCarSearch",
+    "pages/profile/profile",
+    "pages/profile-bloghistory/profile-bloghistory"
   ],
   "window": {
     "navigationBarTitleText": "carpoor",
-    "navigationBarBackgroundColor": "#EEC900"
+    "navigationBarBackgroundColor": "#0bcdd5"
   },
   "tabBar": {
     "color": "#dddddd",
@@ -33,7 +34,7 @@
         "text": "发现"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/profile/profile",
         "iconPath": "images/tabbar/my.png",
         "selectedIconPath": "images/tabbar/my_cur.png",
         "text": "我的"

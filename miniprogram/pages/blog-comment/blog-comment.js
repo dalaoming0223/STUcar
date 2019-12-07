@@ -9,6 +9,7 @@ Page({
   data: {
     blog: {},
     commentList: [],
+    commentLength: 0,
     blogId: '',
     isComment: true
   },
@@ -37,9 +38,9 @@ Page({
       }
     }).then((res) => {
       wx.hideLoading()
-
+      console.log(res.result.commentList)
       let commentList = res.result.commentList.data
-
+      let commentLength = res.result.commentList.data.length
       // 时间格式化
       commentList.forEach((item) => {
         item.createTime = formatTime(new Date(item.createTime))
@@ -47,6 +48,7 @@ Page({
 
       this.setData({
         commentList,
+        commentLength,
         blog: res.result.detail[0]
       })
 

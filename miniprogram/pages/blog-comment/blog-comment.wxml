@@ -30,5 +30,5 @@
 </scroll-view>
 
 <view class="blog-ctrl">
-  <x-blog-ctrl blogId="{{blog._id}}" iconfont="iconfont" icon-pinglun="icon-pinglun" icon-fenxiang="icon-fenxiang" bind:refreshCommentList="_getBlogDetail" />
+  <x-blog-ctrl blogId="{{blog._id}}" blog="{{blog}}" bind:refreshCommentList="_getBlogDetail" />
 </view>

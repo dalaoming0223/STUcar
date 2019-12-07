@@ -3,7 +3,8 @@
     "x-search": "/components/search/search",
     "x-login": "/components/login/login",
     "x-blog-card": "/components/blog-card/blog-card",
-    "x-blog-ctrl": "/components/blog-ctrl/blog-ctrl"
+    "x-blog-ctrl": "/components/blog-ctrl/blog-ctrl",
+    "cu-custom": "/colorui/components/cu-custom"
   },
   "navigationBarTitleText": "发现",
   "enablePullDownRefresh": true

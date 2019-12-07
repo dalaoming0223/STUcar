@@ -42,6 +42,24 @@ Page({
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
+    //分割分割 12.7 todo：
+    isLodding: true,
+
+    statusBarHeight: 0,//状态栏高度
+    titleBarHeight: 0,//标题栏高度
+    navBarHeight: 0,//导航栏高度
+    navData: ['人找车', '车找人'],
+    currentNavTab: 0,//当前状态
+
+    dnName:'CarOwnerRecord',//查询集合列表，默认人找车
+
+    pageIndex:1,//第一页
+    hasMore:true,//是否还有下一页
+    list:[],
+
+    hotList: [],
+    hotCurrent:0,
+
   },
 
   onPublishPingCar() {

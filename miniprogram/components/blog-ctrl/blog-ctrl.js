@@ -19,16 +19,35 @@ Component({
     modalShow: false, // 是否显示评论输入框
     isFocus: false,
     content: '', // 输入的评论
-    commentLength: 0 // 评论数
+    commentLength: '' // 评论数    todo:这里始终影响我详情页面评论数的值
   },
 
+  // 生命周期
+  lifetimes: {
+    ready() { // 在组件在视图层布局完成后执行
+      if (this.properties.blog === null) { // 详情页没有blog数据，不显示评论数
+        this.setData({
+          commentLength: ''
+        })
+      }
+    }
+  },
+
+  // 对数据的监听(数据初次加载完成也会执行)
+  observers: {
+    blog(newData) {
+      this.setData({
+        commentLength: newData.commentLength
+      })
+    }
+  },
   /**
    * 组件的方法列表
    */
   methods: {
     // 评论
     onComment() {
-
+      //此处出错
       // 需求修改：博客列表页点击评论跳到详情页
       // if (this.properties.blog !== null) {
       //   wx.navigateTo({
@@ -124,17 +143,17 @@ Component({
         })
 
         // 推送模板消息
-        wx.cloud.callFunction({
-          name: 'sendMessage',
-          data: {
-            content,
-            formId,
-            time: formatTime(new Date(), false),
-            blogId: this.properties.blogId
-          }
-        }).then((res) => {
-          console.log(res)
-        })
+        // wx.cloud.callFunction({
+        //   name: 'sendMessage',
+        //   data: {
+        //     content,
+        //     formId,
+        //     time: formatTime(new Date(), false),
+        //     blogId: this.properties.blogId
+        //   }
+        // }).then((res) => {
+        //   console.log(res)
+        // })
 
         let commentL = this.data.commentLength++
         if (this.properties.blog === null) { // 详情页没有blog数据，不显示评论数
@@ -148,7 +167,7 @@ Component({
           commentLength: commentL
         })
 
-        // 父元素刷新评论页面
+        // 父元素刷新评论页面  抛出此事件
         this.triggerEvent('refreshCommentList')
       })
     }

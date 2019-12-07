@@ -1,4 +1,8 @@
 <!--pages/blog/blog.wxml-->
+<!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+		<view slot="content">全屏抽屉</view>
+</cu-custom> -->
 <view class="container">
   <!-- 你的小头头 -->
   <view class="header">
@@ -15,8 +19,7 @@
       <view class="blog-panel">
         <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment"></x-blog-card>
         <!-- 评论、分享组件 iconfont 调用外部样式-->
-        <x-blog-ctrl blogId="{{item._id}}" blog="{{item}}" iconfont="iconfont" icon-pinglun="icon-pinglun"
-          icon-fenxiang="icon-fenxiang" />
+        <x-blog-ctrl blogId="{{item._id}}" blog="{{item}}" />
       </view>
     </block>
   </view>
