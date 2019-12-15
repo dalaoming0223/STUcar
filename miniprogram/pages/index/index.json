@@ -2,5 +2,6 @@
   "usingComponents": {
     "x-login": "/components/login/login"
   },
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":10
 }

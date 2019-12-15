@@ -1,14 +1,7 @@
-<scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}">
-  <!-- 导航栏 -->
-  <view class='topNavBar' style="height:{{titleBarHeight+44}}px;padding-top:{{statusBarHeight}}px">
-    <scroll-view scrpll-x="true" class='nav' scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-      <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem">
-        <view class='nav-item {{currentNavTab == idx ? "active" :""}}' data-current="{{idx}}" bindtap='switchNav'>{{navItem}}</view>
-      </block>
-    </scroll-view>
-  </view>
+  <wxs module="dateUtil" src="../../filter/timeUtil.wxs"></wxs>
+  
   <!-- 轮播图 -->
-  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" style="padding-top:10px"indicator-dots="true" circular="true"
 		autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3"
 		indicator-active-color="#0081ff">
 		<swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
@@ -19,52 +12,65 @@
 			</view>
 		</swiper-item>
 	</swiper>
+    <!-- 最新头条 -->
+  <view class='hot-info-view'>
+    <view class='icon'>
+      <image src='../../images/icon/hot-icon.png'></image>
+    </view>
+    <view class='hot-view'>
+      <swiper class='swiper-box' autoplay='{{true}}' interval='2000' vertical='{{true}}' circular='{{true}}' current='{{hotCurrent}}' bindchange='hotSwiperChange'>
+        <swiper-item class='item' wx:for='{{hotList}}' bindtap="hotNewsClick">{{item.title}}</swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <!-- 导航栏 -->
+  <view class="mgt30">
+    <view class='btn-group'>
+      <view class="btn-container width80">
+        <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem">
+          <view class='{{currentNavTab == idx ? "bg-active " :""}}' style="width:50%;border-radius: 15rpx 15rpx 15rpx 15rpx;" data-current="{{idx}}" bindtap='switchNav'>{{navItem}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
 	<!-- 内容 -->
   <view class='data-list' wx:if="{{list.length != 0 || isLodding }}">
-      <view wx:for="{{list}}" wx:key="{{index}}" data-id="{{item._id}}" data-idx="{{index}}" class='list-table' bindtap='lookTripDetails'>
-      <!-- 顶部信息 -->
-      <view class='top-view'>
-        <!-- 头像+昵称 -->
-        <view class='headImgName'>
+    <view wx:for="{{list}}" wx:key="{{index}}" data-id="{{item._id}}" data-idx="{{index}}" class='list-table' bindtap='lookTripDetails'>
+      <view>
+      <view class='headImgName'>
           <image class='img' src='{{item.userInfo.avatarUrl}}'></image>
           <text class='name'>{{item.userInfo.nickName}}</text>
-        </view>
-        <!--方向+电话 -->
-        <view class='dreicTel'>
-          <text class='direction'>{{item.startRegion[2]}}->{{item.endRegion[2]}}</text>
-          <text class='tel'>预约</text>
-        </view>
       </view>
-      <!-- 行车路线 -->
-      <view class='trip'>
-        <view class='set-out'>
-          <text class='label'>时间：</text>
-          <text class='setOut-time'>{{dateUtil.dateFormat(item.exactDate)}}</text>
-        </view>
-        <view class='route-line'>
-          <text class='label'>起点：</text>
-          <text class='route'>{{item.startLocation.name}} </text>
-        </view>
-        <view wx:if="{{item.tripsArray}}" class='route-line'>
-          <text class='label'>途径：</text>
-          <view class='route'>
-            <text class='route-item' wx:for="{{item.tripsArray}}">{{item.name}} </text>
+      <view class="flex-row border" style="padding: 30rpx">
+        <view>
+          <view>
+            <text class="badge bg-active">起</text>
+            {{location[item.startPlace]}}
+          </view>
+          <view class="text-gray">
+            <text class="badge bg-danger">终</text>
+            {{location[item.endPlace]}}
           </view>
         </view>
-        <view class='route-line'>
-          <text class='label'>终点：</text>
-          <text class='route'>{{item.endLocation.name}} </text>
-        </view>
-        <view class='route-line'>
-          <text class='label'>预算：</text>
-          <text class='route'>{{item.budget}} 元/人</text>
+        <view class="vertical-center row-right text-right">
+          <view class="vertical-center row-right text-right">
+            <view>{{dateUtil.dateFormat(item.exactDate)}}</view>
+            <view class="mbtn-primary" style="margin-left: 10rpx">约Ta</view>
+          </view>
         </view>
       </view>
-      <!-- 底部信息 -->
-      <view class='bottom-view'>
-        <text class='send-time'>备注:{{item.remarks}}</text>
-        <text class='seat'>座位：<text class='number'>{{item.peopleNumber}}</text> 个   </text>
+      <view class="other-info">
+        <view class="weui-grids">
+          <view class="weui-grid"></view>
+          <view class="weui-grid">
+            <view><text class='seat'>座位：<text class='number'>{{item.peopleNumber}}</text> 个   </text></view>
+          </view>
+          <view class="weui-grid">
+            <view>{{item.budget}}元/人</view>
+          </view>
+        </view>
       </view>
+    </view>
     </view>
 
     <view class='loddingText-view'>
@@ -73,14 +79,15 @@
     </view>
   </view>
 
-  
+  <!-- 透明遮盖层，用于退出评分层 -->
+  <view bindtouchmove="hideModal"  bindtap="hideModal" class="touming-view" style='height:{{windowHeight}}px' wx:if="{{status == 'on'}}">   
+  </view>  
 
 	<!-- 底部弹出层 -->
     <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
     bind:loginfail="onLoginFail">
         
     </x-login>
-</scroll-view>
 	<!-- 发布信息组件 -->
 	<view class='publish-btn'>
 		<view class='right-view'></view>

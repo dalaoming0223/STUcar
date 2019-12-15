@@ -5,68 +5,38 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
-/** 导航栏 */
-.topNavBar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #0091ff;
-  z-index: 99;
-}
-.search{
-  padding-right: 120px;
-  height: 44px;
+/* 热门消息 */
+.hot-info-view{
   display: flex;
-}
-.searchbox{
-  flex: 1;
-  height: 30px;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  display: flex;
-  margin-top: 8px;
+  height: 80rpx;
+  padding: 0 20rpx;
   align-items: center;
-  border-radius: 27px;
-  background: hsla(0, 0%, 100%, .6);
+  background-color: #ffffff;
+  margin-bottom: 10rpx;
 }
-.searchicon{
-  width: 20px;
-  height: 20px;
-  margin-left: 20rpx;
-  margin-right: 10rpx; 
+.hot-info-view .icon{
+  width: 45rpx;
+  height: 45rpx;
 }
-.searchinput{
-  font-size: 14px;
-  color: #fff;
-  flex: 1;
-}
-.messageBtn{
-  width: 50rpx;
-  height: 50rpx;
-  margin-right: 30rpx;
-}
-.nav {
-  height: 44px;
+.hot-info-view .icon image{
   width: 100%;
-  box-sizing: border-box;
+  height: 100%;
+}
+.hot-view{
+  flex: 1;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+.hot-info-view .swiper-box{
+  position: relative;
+  height: 40rpx;
+  line-height: 40rpx;
   overflow: hidden;
-  line-height: 44px;
-  background: white;
-  font-size: 16px;
+}
+.hot-info-view .swiper-box .item{
   white-space: nowrap;
-  z-index: 99;
-  border-bottom: 1px solid #E1E1E1;
-}
-.nav-item {
-  width: 20%;
-  display: inline-block;
-  text-align: center;
-  font-size: 14px;
-}
-.nav-item.active{
-  font-weight: bold;
-  color: #0091ff;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
 }
 /**/
 .userinfo, .uploader, .tunnel {
@@ -208,7 +178,7 @@ page {
   padding: 0rpx 20rpx;
   border-radius: 10rpx;
   background: #ffffff;
-  box-shadow: 0 0 5rpx #ccc;
+  /* box-shadow: 0 0 5rpx #ccc; */
 }
 .data-list .top-view{
   height: 100rpx;
@@ -220,6 +190,7 @@ page {
   flex: 1;
   display: flex;
   align-items: center;
+  padding-top: 15rpx;
 }
 .data-list .headImgName .img{
   width: 60rpx;
@@ -317,7 +288,9 @@ page {
   width: 100%;
   height: 400px;
 }
-
+.other-info{
+  padding-bottom: 15prx;
+}
 .touming-view{
   width: 100%;
   background-color: #ccc;
