@@ -374,6 +374,41 @@ Page({
     });
   },
   /**
+   * 查看行程详情
+   */
+  lookTripDetails:function(e){
+    let _this = this;
+    let id = e.currentTarget.dataset.id;
+    let idx = e.currentTarget.dataset.idx;
+    let item = _this.data.list[idx];
+    console.log('转详情页打印item.tripsArray',item.tripsArray)
+    if (item.tripsArray){
+      wx.navigateTo({
+        url: '../../pages/tripDetails/tripDetails?id=' + id,
+      });
+    }else{
+      wx.navigateTo({
+        url: '/pages/passengersTripDetails/passengersTripDetails?id=' + id,
+      });
+    }
+  },
+  /**
+   * 发布信息按钮动画
+   */
+  trigger:function(){
+    let _this = this;
+    let active = _this.data.status;
+    if(active == 'on'){
+      this.setData({
+        status : ''
+      });
+    }else{
+      this.setData({
+        status : 'on'
+      });
+    }
+  },
+  /**
    * 获取60分钟前时间戳
    */
   startTime:function(){

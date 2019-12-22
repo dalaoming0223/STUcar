@@ -1,7 +1,0 @@
-<!--pages/demo/demo.wxml-->
-<cu-custom bgColor="bg-yellow">
-    <!-- isBack="true" -->
-    <!-- <view slot="backText">返回</view> -->
-    <view slot="content">测试信息</view>
-</cu-custom>
-<text>pages/demo/demo.wxml</text>

@@ -1,0 +1,17 @@
+<!--miniprogram/pages/chooseIdentify/chooseIdentify.wxml-->
+<view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex">
+      <view class="weui-flex__item" bindtap="studentBind">
+          <image src="/images/student.png" mode="aspectFit"></image>
+      </view>
+      <view class="weui-flex__item" bindtap="driverBind">
+        <image src="/images/driver.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+  <view class="click">
+    <image src="/images/click.png" mode="aspectFit" ></image>
+  </view>
+    <button class=""open-type="getUserInfo">点击代表同意授权小程序</button>
+</view>

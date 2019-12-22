@@ -1,0 +1,2 @@
+<!--miniprogram/pages/tologin/tologin.wxml-->
+<button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>

@@ -58,7 +58,7 @@ Component({
 
 
       // 此判断对已存在用户数据时可减少卡顿
-      if (Object.keys(app.getGlobalData('userInfo')).length != 0) { // 是否已经授权过并且获取了昵称头像
+      if (app.getGlobalData('userInfo')) { // 是否已经授权过并且获取了昵称头像
         // 显示评论弹出层
         this._modalShow()
       } else {

@@ -1,24 +1,25 @@
   <wxs module="dateUtil" src="../../filter/timeUtil.wxs"></wxs>
-  
+
   <!-- 轮播图 -->
-  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" style="padding-top:10px"indicator-dots="true" circular="true"
-		autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3"
-		indicator-active-color="#0081ff">
-		<swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
-			<view class="swiper-item">
-				<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-				<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}"
-					objectFit="cover" wx:if="{{item.type=='video'}}"></video>
-			</view>
-		</swiper-item>
-	</swiper>
-    <!-- 最新头条 -->
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" style="padding-top:10px" indicator-dots="true"
+    circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3"
+    indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+          wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>
+  <!-- 最新头条 -->
   <view class='hot-info-view'>
     <view class='icon'>
       <image src='../../images/icon/hot-icon.png'></image>
     </view>
     <view class='hot-view'>
-      <swiper class='swiper-box' autoplay='{{true}}' interval='2000' vertical='{{true}}' circular='{{true}}' current='{{hotCurrent}}' bindchange='hotSwiperChange'>
+      <swiper class='swiper-box' autoplay='{{true}}' interval='2000' vertical='{{true}}' circular='{{true}}'
+        current='{{hotCurrent}}' bindchange='hotSwiperChange'>
         <swiper-item class='item' wx:for='{{hotList}}' bindtap="hotNewsClick">{{item.title}}</swiper-item>
       </swiper>
     </view>
@@ -28,70 +29,147 @@
     <view class='btn-group'>
       <view class="btn-container width80">
         <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem">
-          <view class='{{currentNavTab == idx ? "bg-active " :""}}' style="width:50%;border-radius: 15rpx 15rpx 15rpx 15rpx;" data-current="{{idx}}" bindtap='switchNav'>{{navItem}}</view>
+          <view class='{{currentNavTab == idx ? "bg-active " :""}}'
+            style="width:50%;border-radius: 15rpx 15rpx 15rpx 15rpx;" data-current="{{idx}}" bindtap='switchNav'>
+            {{navItem}}</view>
         </block>
       </view>
     </view>
   </view>
-	<!-- 内容 -->
-  <view class='data-list' wx:if="{{list.length != 0 || isLodding }}">
-    <view wx:for="{{list}}" wx:key="{{index}}" data-id="{{item._id}}" data-idx="{{index}}" class='list-table' bindtap='lookTripDetails'>
-      <view>
-      <view class='headImgName'>
+  <!-- 搜索框 -->
+  <view class="search-container">
+      <x-search bind:search="onSearch"></x-search>
+  </view>
+  <!-- 内容 -->
+  <!-- //currentNavTab=1 -->
+  <view class='data-list' wx:if="{{currentNavTab != 0}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" data-id="{{item._id}}" data-idx="{{index}}" class='list-table'
+      bindtap='lookTripDetails'>
+        <view class='headImgName'>
           <image class='img' src='{{item.userInfo.avatarUrl}}'></image>
           <text class='name'>{{item.userInfo.nickName}}</text>
-      </view>
-      <view class="flex-row border" style="padding: 30rpx">
-        <view>
+        </view>
+        <view class="flex-row border" style="padding: 30rpx">
           <view>
-            <text class="badge bg-active">起</text>
-            {{location[item.startPlace]}}
+            <view>
+              <text class="badge bg-active">起</text>
+              {{location[item.startPlace]}}
+            </view>
+            <view class="text-gray">
+              <text class="badge bg-danger">终</text>
+              {{location[item.endPlace]}}
+            </view>
           </view>
-          <view class="text-gray">
-            <text class="badge bg-danger">终</text>
-            {{location[item.endPlace]}}
-          </view>
-        </view>
-        <view class="vertical-center row-right text-right">
           <view class="vertical-center row-right text-right">
-            <view>{{dateUtil.dateFormat(item.exactDate)}}</view>
-            <view class="mbtn-primary" style="margin-left: 10rpx">约Ta</view>
+            <view class="vertical-center row-right text-right">
+              <view>{{dateUtil.dateFormat(item.exactDate)}}</view>
+              <view class="mbtn-primary" style="margin-left: 10rpx">约Ta</view>
+            </view>
           </view>
         </view>
-      </view>
-      <view class="other-info">
-        <view class="weui-grids">
-          <view class="weui-grid"></view>
-          <view class="weui-grid">
-            <view><text class='seat'>座位：<text class='number'>{{item.peopleNumber}}</text> 个   </text></view>
-          </view>
-          <view class="weui-grid">
-            <view>{{item.budget}}元/人</view>
+        <view class="other-info">
+          <view class="weui-grids">
+            <view class="weui-grid"></view>
+            <view class="weui-grid">
+              <view><text class='seat'>座位：<text class='number'>{{item.peopleNumber}}</text> 个 </text></view>
+            </view>
+            <view class="weui-grid">
+              <view>{{item.budget}}元/人</view>
+            </view>
           </view>
         </view>
-      </view>
-    </view>
     </view>
 
     <view class='loddingText-view'>
       <view wx:if="{{hasMore}}">上拉加载更多</view>
-      <view wx:else >已经到底了</view>
+      <view wx:else>已经到底了</view>
+    </view>
+  </view>
+
+  <!-- //currentNavTab=1 -->
+  <view class='data-list' wx:if="{{currentNavTab != 1}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" data-id="{{item._id}}" data-idx="{{index}}" class='list-table'
+      bindtap='lookTripDetails'>
+        <view class='headImgName'>
+          <image class='img' src='{{item.userInfo.avatarUrl}}'></image>
+          <text class='name'>{{item.userInfo.nickName}}</text>
+        </view>
+        <!--列表项-->
+    <view>
+      <view class="weui-grids">
+        <view class="weui-grid"><text class="badge bg-active">起</text>{{item.startLocation.name}}</view>
+        <view class="weui-grid">
+          <view class="text-del">
+            <text decode="{{true}}">&emsp;></text>
+          </view>
+          <view class="text-blue">{{dateUtil.dateFormat(item.exactDate)}}</view>
+        </view>
+        <view class="weui-grid"><text class="badge bg-danger">终</text>{{item.endLocation.name}}</view>
+      </view>
+      <view class="flex-row border" style="padding: 15rpx">
+        <view>
+          <view>姓名：王先生</view>
+          <view class="text-gray">备注：无备注</view>
+        </view>
+        <view>
+          <view class="vertical-center row-right text-right">
+            <view class="mbtn-primary">约Ta</view>
+          </view>
+        </view>
+      </view>
+    </view>
+        <view class="other-info">
+          <view class="weui-grids">
+            <view class="weui-grid"></view>
+            <view class="weui-grid">
+              <view><text class='seat'>座位：<text class='number'>{{item.peopleNumber}}</text> 个 </text></view>
+            </view>
+            <view class="weui-grid">
+              <view>{{item.budget}}元/人</view>
+            </view>
+          </view>
+        </view>
+    </view>
+
+    <view class='loddingText-view'>
+      <view wx:if="{{hasMore}}">上拉加载更多</view>
+      <view wx:else>已经到底了</view>
     </view>
   </view>
 
   <!-- 透明遮盖层，用于退出评分层 -->
-  <view bindtouchmove="hideModal"  bindtap="hideModal" class="touming-view" style='height:{{windowHeight}}px' wx:if="{{status == 'on'}}">   
-  </view>  
+  <!-- <view bindtouchmove="hideModal" bindtap="hideModal" class="touming-view" style='height:{{windowHeight}}px'
+    wx:if="{{status == 'on'}}">
+  </view> -->
 
-	<!-- 底部弹出层 -->
-    <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
-    bind:loginfail="onLoginFail">
-        
-    </x-login>
-	<!-- 发布信息组件 -->
-	<view class='publish-btn'>
-		<view class='right-view'></view>
-		<view class='edit-btn blod-view' bindtap='onPublishPingCar'>
-			<image class='edit-icon ' src='/images/icon/publish.png'></image>
-		</view>
-	</view>
+  <!-- 底部弹出层 -->
+  <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
+
+  </x-login>
+  <!-- 发布信息组件 -->
+  <!-- <view class='publish-btn'>
+    <view class='right-view'></view>
+    <view class='edit-btn blod-view' bindtap='onPublishPingCar'>
+      <image class='edit-icon ' src='/images/icon/publish.png'></image>
+    </view>
+  </view> -->
+  <!-- 发布信息组件 -->
+  <view class='publish-btn'>
+    <view class='right-view'></view>
+    <view class='edit-btn blod-view' bindtap='trigger'>
+      <image class='edit-icon {{status}}' src='../../images/icon/publish.png'></image>
+      <image class='close-icon {{status}}' src='../../images/icon/close.png'></image>
+    </view>
+    <!-- 人找车 -->
+    <view class='rc blod-view {{status}}'>
+      <navigator class='navigator' url='/pages/peopleLookCars/peopleLookCars'>
+        <image class='img' src='../../images/icon/rc.png'></image>
+      </navigator>
+    </view>
+    <!-- 车找人 -->
+    <view class='cr blod-view {{status}}'>
+      <navigator class='navigator' url='/pages/carsLookPeople/carsLookPeople'>
+        <image class='img' src='../../images/icon/cr.png'></image>
+      </navigator>
+    </view>
+  </view>

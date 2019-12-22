@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "x-login": "/components/login/login"
+    "x-login": "/components/login/login",
+    "x-search": "/components/search/search"
   },
   "enablePullDownRefresh": true,
   "onReachBottomDistance":10

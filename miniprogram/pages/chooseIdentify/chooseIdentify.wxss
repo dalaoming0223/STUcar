@@ -1,0 +1,29 @@
+/* miniprogram/pages/chooseIdentify/chooseIdentify.wxss */
+.page__bd{
+  margin-top:5vh;
+}
+.weui-flex__item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weui-flex__item image{
+  width: 50vw;
+  height: 40vh;
+}
+.click{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.click image{
+  margin-top: -5vh;
+  width: 40vh;
+  height: 40vh;
+  padding-left: 5vw;
+}
+.text{
+  text-align: center;
+  padding-left: 5vw;
+  font-size:30rpx;
+}

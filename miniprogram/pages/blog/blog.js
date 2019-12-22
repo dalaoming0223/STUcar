@@ -21,7 +21,7 @@ Page({
   //发布功能
   onPublish() {
     // 此判断对已存在用户数据时可减少卡顿
-    if (Object.keys(app.getGlobalData('userInfo')).length != 0) { // 是否已经授权过并且获取了昵称头像
+    if (app.getGlobalData('userInfo')) { // 是否已经授权过并且获取了昵称头像
       this.onLoginSuccess({
         detail: app.getGlobalData('userInfo')
       })
@@ -32,9 +32,6 @@ Page({
           if (res.authSetting['scope.userInfo']) { // 已授权
             wx.getUserInfo({ // 获取用户信息
               success: (res) => { // 这里使用箭头函数可改变内部this指向为外部的this
-
-                app.setGlobalData('userInfo', res.userInfo) // 设置app全局属性
-
                 this.onLoginSuccess({
                   detail: res.userInfo
                 })
@@ -53,6 +50,7 @@ Page({
   // 用户授权成功
   onLoginSuccess(event) {
     const detail = event.detail
+    console.log('授权成功时返回detail',detail)
     wx.navigateTo({ // 跳转到博客编辑页
       url: `../blog-edit/blog-edit?nickName=${detail.nickName}&avatarUrl=${detail.avatarUrl}`,
     })

@@ -7,9 +7,11 @@
 </view> -->
 <view class="user-info" style="background-image: url(https://static.sesine.com/wechat-weapp-movie/images/user_bg_1.jpg)">
         <view class="user-skin" bindtap="viewSkin"></view>
-        <image src="{{userInfo.avatarUrl}}" class="user-avatar"></image>
+        <image wx:if="{{loginStatus==0}}" class="user-avatar"src="/images/head.jpg" bindtap="login"></image>
+        <image wx:else src="{{userInfo.avatarUrl}}" class="user-avatar"></image>
         <view class="user-nickname">
-            {{userInfo.nickName}}
+            <button wx:if="{{loginStatus==0}}" open-type="getUserInfo" bindtap="login">尚未授权请先授权</button>
+            <text wx:else>{{userInfo.nickName}}</text>
             <block wx:if="{{userInfo.gender == 1}}">
                 <view class="user-sex-male"></view>
             </block>
@@ -29,7 +31,7 @@
     <view class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-blue">{{starCount}}</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-favorfill"></text> 点赞</view>
+        <text class="cuIcon-favorfill"></text> 信用等级</view>
     </view>
     <view class="flex flex-sub flex-direction">
       <view class="text-xxl text-green">{{forksCount}}</view>
@@ -40,6 +42,20 @@
 </view>
 
 <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <!-- 乘客认证 -->
+    <view class="cu-item arrow">
+      <navigator class="content" hover-class="none">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">stu认证</text>
+      </navigator>
+    </view>
+    <!-- 司机认证-->
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/verify/verify" hover-class="none">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">司机认证</text>
+      </navigator>
+    </view>
     <!-- 我的发现 -->
     <view class="cu-item arrow">
       <navigator class="content" url="/pages/profile-bloghistory/profile-bloghistory" hover-class="none">
@@ -47,26 +63,12 @@
         <text class="text-grey">我的发现</text>
       </navigator>
     </view>
-    <!-- 日志 -->
+    <!-- 我的发布 -->
     <view class="cu-item arrow">
       <navigator class="content" url="/pages/about/log/log" hover-class="none">
         <text class="cuIcon-formfill text-green"></text>
         <text class="text-grey">我的发布</text>
       </navigator>
-    </view>
-    <!-- 赞赏支持 -->
-    <view class="cu-item arrow">
-      <view class="content" bindtap="showQrcode">
-        <text class="cuIcon-appreciatefill text-red"></text>
-        <text class="text-grey">赞赏支持</text>
-      </view>
-    </view>
-    <!-- 意见反馈 -->
-    <view class="cu-item arrow">
-      <button class="cu-btn content" open-type="feedback">
-        <text class="cuIcon-writefill text-cyan"></text>
-        <text class="text-grey">意见反馈</text>
-      </button>
     </view>
     <!-- bug测试 -->
     <view class="cu-item arrow">

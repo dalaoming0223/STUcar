@@ -1,6 +1,7 @@
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
 @import "iconfont.wxss";
+@import "weui.wxss";
 /**app.wxss**/
 view {
 	font-size: 24rpx;

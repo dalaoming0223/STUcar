@@ -2,14 +2,20 @@
   "cloud": true,
   "pages": [
     "pages/index/index",
-    "pages/fabu/fabu",
     "pages/blog/blog",
     "pages/blog-edit/blog-edit",
     "pages/blog-comment/blog-comment",
     "pages/peopleLookCars/peopleLookCars",
     "pages/NewCarSearch/NewCarSearch",
     "pages/profile/profile",
-    "pages/profile-bloghistory/profile-bloghistory"
+    "pages/chooseIdentify/chooseIdentify",
+    "pages/profile-bloghistory/profile-bloghistory",
+    "pages/verify/verify",
+    "pages/tologin/tologin",
+    "pages/carsLookPeople/carsLookPeople",
+    "pages/NewPepleSearch/NewPepleSearch",
+    "pages/tripDetails/tripDetails",
+    "pages/passengersTripDetails/passengersTripDetails"
   ],
   "window": {
     "navigationBarTitleText": "carpoor",

@@ -1,0 +1,19 @@
+/* miniprogram/pages/verify/verify.wxss */
+.weui-cell__bd{
+	text-align: right;
+}
+.weui-cell:before{
+	left: 0;
+}
+.weui-cell{
+	padding: 20rpx;
+}
+.img-box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.img-box>view{
+	flex-grow: 1;
+}

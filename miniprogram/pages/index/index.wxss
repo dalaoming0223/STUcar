@@ -167,7 +167,12 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
-
+/* 搜索框 */
+.search-container {
+  margin-top: 20rpx;
+  background-color: #fff;
+  flex: 1;
+}
 /* 内容 */
 /* 列表信息 */
 .data-list{

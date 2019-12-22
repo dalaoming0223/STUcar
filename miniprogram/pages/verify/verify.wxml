@@ -1,0 +1,122 @@
+<!--miniprogram/pages/verify/verify.wxml-->
+<view class="page">
+  <!--表单-->
+  <view>
+    <!--表单第一段-->
+    <view class="weui-cells">
+      <!--姓名-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            姓名
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请填写真实姓名" data-key="user_name" bindinput="formInput" value="{{formData.user_name}}" />
+        </view>
+      </view>
+      <!--手机号-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            手机号
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请填写您的手机号" data-key="phone" bindinput="formInput" value="{{formData.phone}}" />
+        </view>
+      </view>
+    </view>
+    <!--表单第二段-->
+    <view class="weui-cells">
+      <!--车型-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            车型
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请填写您的车型" data-key="car_type" bindinput="formInput" value="{{formData.car_type}}" />
+        </view>
+      </view>
+      <!--车牌号-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            车牌号
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请填写您的车牌号" data-key="car_num" bindinput="formInput" value="{{formData.car_num}}" />
+        </view>
+      </view>
+      <!--身份证号-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            身份证号
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请填写您的身份证号" data-key="id_num" bindinput="formInput" value="{{formData.id_num}}" />
+        </view>
+      </view>
+    </view>
+    <!--表单第三段-->
+    <view class="weui-cells">
+      <!--驾驶证/行驶证-->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            上传驾驶证件
+          </view>
+        </view>
+      </view>
+      <view class="weui-cell" style="padding: 0 20rpx">
+        <view class="img-box">
+          <image src="{{formData.img1 || '/images/default.png'}}" mode="aspectFit" style="width:350rpx;height:240rpx;" data-key="img1" bindtap="chooseImage" />
+          <image src="{{formData.img2 || '/images/default.png'}}" mode="aspectFit" style="width:350rpx;height:240rpx;margin-left: 10rpx" data-key="img2" bindtap="chooseImage" />
+        </view>
+      </view>
+      <view class="img-box" style="padding-bottom: 20rpx;">
+        <view>
+          驾驶证
+        </view>
+        <view>
+          行驶证
+        </view>
+      </view>
+      <!--身份证-->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            上传身份证件
+          </view>
+        </view>
+      </view>
+      <view class="weui-cell" style="padding: 0 20rpx">
+        <view class="img-box">
+          <image src="{{formData.img3 || '/images/default.png'}}" mode="aspectFit" style="width:350rpx;height:240rpx;" data-key="img3" bindtap="chooseImage" />
+          <image src="{{formData.img4 || '/images/default.png'}}" mode="aspectFit" style="width:350rpx;height:240rpx;margin-left: 10rpx" data-key="img4" bindtap="chooseImage" />
+        </view>
+      </view>
+      <view class="img-box" style="padding-bottom: 20rpx;">
+        <view>
+          正面
+        </view>
+        <view>
+          反面
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--提交按钮-->
+  <view>
+    <view class="text-center mgt20" style="margin-bottom: 20rpx">
+      <view class="mbtn-primary width80" bindtap="publish">
+        发布约车
+      </view>
+    </view>
+  </view>
+</view>

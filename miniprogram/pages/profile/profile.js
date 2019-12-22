@@ -9,15 +9,38 @@ Page({
     userInfo: null,
     visitTotal: 20,
     starCount: 20,
-    forksCount: 20
+    forksCount: 20,
+    
+    loginStatus: 0, //登陆状态，0为未登录，1为已登陆
+    username: "",
+    identify: '', //身份 1为学生，0为司机,
+    //竖向工具栏跳转地址
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    // 加载用户信息
+    let that = this;
+    that.setData({
+      identify: app.globalData.identify
+    })
+    if (app.globalData.userInfo != null) {
+      console.log('获取到用户信息', app.globalData.userInfo)
+       that.setData({
+         userInfo: app.globalData.userInfo,
+         loginStatus: 1
+       })
+    }else{
+      console.log('获取不到信息')
+      that.setData({
+        loginStatus: 0
+      })
+    }
+    // console.log('我的打印全局变量',app.globalData)
+  },
+  login: function () {
+    let that = this;
     wx.getUserInfo({
       withCredentials: false,
       lang: 'zh_CN',
@@ -25,17 +48,19 @@ Page({
         that.setData({
           userInfo: resp.userInfo
         });
+        app.globalData.userInfo = resp.userInfo
       }
     })
-    console.log('====')
-    console.log(app.globalData)
+    that.setData({
+      loginStatus: 1
+    })
+    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log(app.globalData)
+    // console.log(app.globalData)
   },
 
   /**
