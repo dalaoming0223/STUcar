@@ -74,8 +74,8 @@
       </view>
     </view>
     <view class='tel' bindtap='bindMakePhoneCall'>
-      <image src='../../images/icon/tel3.png'></image>
-      <text class='text'>马上预约</text>
+      <!-- <image src='../../images/icon/tel3.png'></image>
+      <text class='text'>马上预约</text> -->
     </view>
     <button class='share' hover-class="other-button-hover" open-type="share">
       <image src='../../images/icon/share3.png'></image>

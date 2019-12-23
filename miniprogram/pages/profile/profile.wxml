@@ -44,7 +44,7 @@
 <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <!-- 乘客认证 -->
     <view class="cu-item arrow">
-      <navigator class="content" hover-class="none">
+      <navigator class="content" hover-class="none" url="/pages/">
         <text class="cuIcon-writefill text-cyan"></text>
         <text class="text-grey">stu认证</text>
       </navigator>
