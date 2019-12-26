@@ -1,0 +1,11 @@
+<!--components/rowImg/rowImg.wxml-->
+<view class="rowImg">
+    <view wx:if="{{identify==1}}" wx:for="{{imagesStudent}}" wx:key="rowImg" wx:for-item="img" wx:for-index="index" class="rowImg-one" bindtap="navgo" data-num="{{index}}">
+      <image src="{{img}}"></image>
+      <text>{{textsStudent[index]}}</text>
+    </view>
+    <view wx:if="{{identify==0}}"  wx:for="{{imagesDriver}}" wx:key="rowImg" wx:for-item="img" wx:for-index="index" class="rowImg-one" bindtap="navgo" data-num="{{index}}">
+      <image src="{{img}}"></image>
+      <text>{{textsDriver[index]}}</text>
+    </view>
+</view>

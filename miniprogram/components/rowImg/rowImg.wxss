@@ -1,0 +1,26 @@
+/* components/rowImg/rowImg.wxss */
+.rowImg{
+  width: 100vw;
+  height: 12vh;
+  margin-top: 1vh;
+  background-color: white;
+  border-bottom: 10rpx orange solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rowImg-one{
+  height: 12vh;
+  margin: 0 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:30rpx;
+  color: rgb(100, 100, 100);
+}
+.rowImg-one image{
+  height: 4vh;
+  width:  4vh;
+  margin-bottom: 0.5vh;
+}

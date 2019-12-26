@@ -21,7 +21,9 @@
         </view>
         <view class="user-location">{{userInfo.province}},{{userInfo.city}}</view>
 </view>
+
 <view class="nav">
+  <rowImg identify="{{identify}}"/>
   <view class="padding flex text-center text-grey bg-white shadow-warp">
     <view class="flex flex-sub flex-direction solid-right">
       <view class="text-xxl text-orange">{{visitTotal}}</view>
@@ -29,9 +31,14 @@
         <text class="cuIcon-attentionfill"></text> 观看</view>
     </view>
     <view class="flex flex-sub flex-direction solid-right">
-      <view class="text-xxl text-blue">{{starCount}}</view>
+      <view class="text-xxl text-blue">信用等级</view>
       <view class="margin-top-sm">
-        <text class="cuIcon-favorfill"></text> 信用等级</view>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow" ></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill"></text>
+      </view>
     </view>
     <view class="flex flex-sub flex-direction">
       <view class="text-xxl text-green">{{forksCount}}</view>

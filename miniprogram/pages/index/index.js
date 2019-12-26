@@ -95,6 +95,7 @@ Page({
       url: '../peopleLookCars/peopleLookCars'
     })
   },
+
   onLoginFail() {
     wx.showModal({
       title: '授权用户才能发',
@@ -135,7 +136,14 @@ Page({
     _this.onGetHotNews(10);//获取热点新闻
     _this.addData(1, _this.data.currentNavTab);//第一个参数页数，第二个参数分类
   },
-
+  /**
+ * 点击搜索
+ */
+  bindSearchTap: function () {
+    wx.navigateTo({
+      url: '../../pages/SearchPage/SearchPage',
+    });
+  },
   /**
    * 获取设备信息
    */

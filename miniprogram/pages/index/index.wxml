@@ -1,6 +1,6 @@
   <wxs module="dateUtil" src="../../filter/timeUtil.wxs"></wxs>
-
   <!-- 轮播图 -->
+
   <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" style="padding-top:10px" indicator-dots="true"
     circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3"
     indicator-active-color="#0081ff">
@@ -12,18 +12,11 @@
       </view>
     </swiper-item>
   </swiper>
-  <!-- 最新头条 -->
-  <view class='hot-info-view'>
-    <view class='icon'>
-      <image src='../../images/icon/hot-icon.png'></image>
-    </view>
-    <view class='hot-view'>
-      <swiper class='swiper-box' autoplay='{{true}}' interval='2000' vertical='{{true}}' circular='{{true}}'
-        current='{{hotCurrent}}' bindchange='hotSwiperChange'>
-        <swiper-item class='item' wx:for='{{hotList}}' bindtap="hotNewsClick">{{item.title}}</swiper-item>
-      </swiper>
-    </view>
-  </view>
+    <!-- 搜索框 -->
+  <!-- <view class="search-container">
+      <x-search bind:search="onSearch"></x-search>
+  </view> -->
+
   <!-- 导航栏 -->
   <view class="mgt30">
     <view class='btn-group'>
@@ -36,9 +29,23 @@
       </view>
     </view>
   </view>
-  <!-- 搜索框 -->
-  <view class="search-container">
-      <x-search bind:search="onSearch"></x-search>
+      <!-- 最新头条 -->
+  <view class='hot-info-view'>
+    <view class='icon'>
+      <image src='../../images/icon/hot-icon.png'></image>
+    </view>
+    <view class='hot-view'>
+      <swiper class='swiper-box' autoplay='{{true}}' interval='2000' vertical='{{true}}' circular='{{true}}'
+        current='{{hotCurrent}}' bindchange='hotSwiperChange'>
+        <swiper-item class='item' wx:for='{{hotList}}' bindtap="hotNewsClick">{{item.title}}</swiper-item>
+      </swiper>
+    </view>
+  </view>
+    <view class='search'>
+    <view class='searchbox' bindtap='bindSearchTap'>
+      <image class='searchicon' src='../../images/icon/search.png'></image>
+      <text class='searchinput'>选择出行方向、地点...</text>
+    </view>
   </view>
   <!-- 内容 -->
   <!-- //currentNavTab=1 -->
@@ -48,6 +55,13 @@
         <view class='headImgName'>
           <image class='img' src='{{item.userInfo.avatarUrl}}'></image>
           <text class='name'>{{item.userInfo.nickName}}</text>
+          <view class="margin-top-sm">
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow" ></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill"></text>
+      </view>
         </view>
         <view class="flex-row border" style="padding: 30rpx">
           <view>
@@ -93,6 +107,13 @@
         <view class='headImgName'>
           <image class='img' src='{{item.userInfo.avatarUrl}}'></image>
           <text class='name'>{{item.userInfo.nickName}}</text>
+          <view class="margin-top-sm">
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow" ></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill text-yellow"></text>
+        <text class="cuIcon-favorfill"></text>
+      </view>
         </view>
         <!--列表项-->
     <view>

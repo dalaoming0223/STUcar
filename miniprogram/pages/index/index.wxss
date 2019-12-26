@@ -5,6 +5,41 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
+/* 搜索框1 */
+.search{
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  padding-right: 50rpx;
+  padding-left: 50rpx;
+  height: 44px;
+  display: flex;
+  z-index: 99;
+  /* position: fixed; */
+  border-radius: 27px;
+  background: rgba(44, 58, 184, 0.6)
+}
+.searchbox{
+  flex: 1;
+  height: 30px;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+  border-radius: 27px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.searchicon{
+  width: 20px;
+  height: 20px;
+  margin-left: 20rpx;
+  margin-right: 10rpx; 
+}
+.searchinput{
+  font-size: 14px;
+  color: #fff;
+  flex: 1;
+}
 /* 热门消息 */
 .hot-info-view{
   display: flex;

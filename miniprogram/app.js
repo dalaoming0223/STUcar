@@ -3,7 +3,7 @@ App({
   globalData: {
     openid: null,
     _status: null,
-    identify: ''
+    identify: 1
   },
   onLaunch: function () {
 

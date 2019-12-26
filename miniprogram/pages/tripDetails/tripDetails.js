@@ -127,7 +127,7 @@ Page({
 
         _this.createdMarker(_this.data.dataList);
         _this.drawPolyline(_this.data.allLocation);
-        // _this.setCaleMap(_this.data.allLocation);
+        _this.setCaleMap(_this.data.allLocation);
 
         wx.hideLoading();
       },
