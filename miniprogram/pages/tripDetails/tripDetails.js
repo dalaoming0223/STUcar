@@ -71,10 +71,12 @@ Page({
         }
       },
     });
+    console.log('能否成功')
     //截取参数
     _this.setData({
       id: options.id
     })
+    console.log('tripDetails的当前文档的id',options.id)
     _this.addData(_this.data.id);
   },
 
@@ -95,6 +97,7 @@ Page({
    */
   addData: function (id) {
     let _this = this;
+    console.log('以下为详情加载数据')
     db.collection('CarOwnerRecord').doc(id).get({
       success: function (res) {
         console.log(res.data);

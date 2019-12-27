@@ -115,7 +115,7 @@
   <view>
     <view class="text-center mgt20" style="margin-bottom: 20rpx">
       <view class="mbtn-primary width80" bindtap="publish">
-        发布约车
+        开始认证
       </view>
     </view>
   </view>

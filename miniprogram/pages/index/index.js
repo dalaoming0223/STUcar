@@ -16,15 +16,15 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      url: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577413575&di=169789865a9d331afdec1ad8f4ea5594&src=http://g.hiphotos.baidu.com/zhidao/pic/item/c9fcc3cec3fdfc038c1f752cdf3f8794a4c2263a.jpg'
     }, {
       id: 1,
         type: 'image',
-        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+        url: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577413575&di=10f911a2871db33bc766cf2125bafb8c&src=http://img.zcool.cn/community/091ae5a5742bebb32f8759a3eef9d1c.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+        url: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=252134151,2320813291&fm=26&gp=0.jpg'
     }, {
       id: 3,
       type: 'image',
@@ -392,7 +392,7 @@ Page({
     console.log('转详情页打印item.tripsArray',item.tripsArray)
     if (item.tripsArray){
       wx.navigateTo({
-        url: '../../pages/tripDetails/tripDetails?id=' + id,
+        url: '/pages/tripDetails/tripDetails?id=' + id,
       });
     }else{
       wx.navigateTo({
