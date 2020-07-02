@@ -1,12 +1,11 @@
-# 云开发 quickstart
+###  使用云开发
 
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
+云开发不错。
 
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
+[![fgDZs.png](https://cdn.img.wenhairu.com/images/2020/07/02/fgDZs.png)](https://img.wenhairu.com/image/fgDZs)
+[![fgW9C.png](https://cdn.img.wenhairu.com/images/2020/07/02/fgW9C.png)](https://img.wenhairu.com/image/fgW9C)
+[![fgEjR.png](https://cdn.img.wenhairu.com/images/2020/07/02/fgEjR.png)](https://img.wenhairu.com/image/fgEjR)
+[![fgaWN.png](https://cdn.img.wenhairu.com/images/2020/07/02/fgaWN.png)](https://img.wenhairu.com/image/fgaWN)
 
-## 参考文档
-
-- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+我的页面具体功能没有实现。
 
